@@ -1,4 +1,8 @@
-<html>
+<% if @projects.empty? %> 
     <h1>Can You See Me?</h1>
     <p>If you can the we're back in business -- kind of, we still have to ring up SCSS :P</p>
-</html>
+<% end %>
+
+<% @projects.each do |project| %>
+    <h3><%= project.title %></h3>
+<% end %>
