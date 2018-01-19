@@ -1,6 +1,12 @@
 <h2>Create Project</h2>
-<%= form_for @project do |f| %>
-    <%= f.text_field :title %>
-    <%= f.text_field :description %>
-    <%= f.submit "Create Project" %>
+<!--<%= form_for @project do |f| %>-->
+<!--    <%= f.text_field :title %>-->
+<!--    <%= f.text_field :description %>-->
+<!--    <%= f.submit "Create Project" %>-->
+<!--<% end %>-->
+
+<%= simple_form_for(@project, html: {class: 'form-horizontal'}) do |f| %>
+    <%= f.input :title, label: false, error: "Please enter a title for your project", placeholder: "Project Title" %>
+    <%= f.input :description, label: false, placeholder: "Enter brief description of your project" %>
+    <%= f.button :submit, class: "btn btn-lg btn-block" %>
 <% end %>
