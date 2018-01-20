@@ -1,6 +1,13 @@
 <% if @projects.empty? %> 
-    <h1>Can You See Me?</h1>
-    <p>If you can the we're back in business -- kind of, we still have to ring up SCSS :P</p>
+    <div class="empty-state-container">
+        <div class="alert alert-info">
+            <p>No projects created yet</p>
+            <%= link_to new_project_path, class: "btn btn-success" do %>
+                <i class="fa fa-plus"></i>
+                Create Project
+            <% end %>
+        </div>
+    </div>
 <% end %>
 
 <% @projects.each do |project| %>

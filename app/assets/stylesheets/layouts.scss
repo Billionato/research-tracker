@@ -1,0 +1,50 @@
+/* 
+This file is for styling elements that will be present throughout the entire application.
+*/
+
+$white: #fff;
+$green: #5cb85c;
+$semi-transparent: rgba(0,0,0,0.25);
+
+body
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.empty-state-container
+{
+    .alert
+    {
+        text-align: center;
+    }
+    
+    .btn
+    {
+        width: 250px;
+    }
+    
+    p
+    {
+        font-size: 18px;
+        margin: 0 0 10px 0;
+    }
+}
+
+/* Font Awesome Icon class modifications */
+.fa-plus
+{
+    padding: 0 5px 0 0;    
+}
+
+/* Base Bootstrap class modifications */
+.btn-success
+{
+    color: $white;
+    background-color: $green;
+    border-color: darken($green, 10%);
+    
+    &:hover
+    {
+        background-color: darken($green, 10%);
+    }
+}
