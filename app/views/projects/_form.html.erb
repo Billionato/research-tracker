@@ -2,7 +2,7 @@
     <!--<h3>Create Project</h3>-->
     <div class="col-md-8 col-md-offset-2">
         <%= simple_form_for(@project, html: {class: 'form-horizontal'}) do |f| %>
-            <%= f.input :title, label: false, error: "Please enter a title for your project", placeholder: "Project Title" %>
+            <%= f.input :name, label: false, error: "Please enter a name for your project", placeholder: "Project Name" %>
             <%= f.input :description, label: false, placeholder: "Brief description of your project (Optional)" %>
             <%= f.button :submit, class: "btn btn-success btn-lg btn-block" %>
         <% end %>
