@@ -10,8 +10,23 @@
     </div>
 <% end %>
 
-<% @projects.each do |project| %>
-    <h3><%= project.name %></h3>
-    <%= link_to 'Edit Project', edit_project_path(project) %> |
-    <%= link_to 'Delete Project', project, method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
+<div class="project-container">
+    <% @projects.each do |project| %>
+        <%= link_to project do %>
+            <div class="col-md-4">
+                <div class="media">
+                    <div class="media-body">
+                        <h2 class="media-heading"><%= truncate project.name, length: 29 %></h2>
+                        <% if project.description.empty? %>
+                            <%= link_to edit_project_path(project), {:class => 'internal-project-link'} do %>
+                                <i class="fa fa-plus"></i>
+                                Add Description
+                            <% end %>
+                        <% end %>
+                        <p><%= truncate project.description, length: 140 %></p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+</div>

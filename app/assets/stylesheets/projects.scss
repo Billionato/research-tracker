@@ -1,3 +1,54 @@
 // Place all the styles related to the Project controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.project-container
+{
+    //text-align: center;
+    
+    a
+    {
+        text-decoration: none;
+        color: $black;
+    }
+    
+    .media
+    {
+        margin: 25px 0 25px 0;
+        padding: 20px;
+        height: 150px;
+        border: 2px solid $black;
+        
+        .media-heading
+        {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .media-body
+        {
+            .internal-project-link
+            {
+                &:hover
+                {
+                    color: $placeholder_colour;
+                }
+            }
+            
+            .fa-plus
+            {
+                padding: 0 0 0 0;
+            }
+        }
+        
+        &:hover
+        {
+            .media-heading
+            {
+                color: $placeholder_colour;     
+            }
+            
+            border-color: $placeholder_colour;
+        }
+    }
+}
