@@ -18,10 +18,7 @@
                     <div class="media-body">
                         <h2 class="media-heading"><%= truncate project.name, length: 29 %></h2>
                         <% if project.description.empty? %>
-                            <%= link_to edit_project_path(project), {:class => 'internal-project-link'} do %>
-                                <i class="fa fa-plus"></i>
-                                Add Description
-                            <% end %>
+                            <p><i>No Project description yet...</i></p>
                         <% end %>
                         <p><%= truncate project.description, length: 140 %></p>
                     </div>

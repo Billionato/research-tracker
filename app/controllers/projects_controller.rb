@@ -29,10 +29,16 @@ class ProjectsController < ApplicationController
     end
     
     def update
-        if @project.update(project_params)
-            redirect_to root_path, notice: "Successfully updated Project"
-        else
-            render 'edit'
+        
+        # Added respond_to block to make sure update works with both HTML edit form and Best-In_Place (bip) json
+        respond_to do |format|
+            if @project.update(project_params)
+                format.html { redirect_to(@project, notice: "Successfully updated project #{@project.name}") }
+                format.json { respond_with_bip(@project) }
+            else
+                format.html { render 'edit' }
+                format.json { respond_with_bip(@project) }
+            end
         end
     end
     

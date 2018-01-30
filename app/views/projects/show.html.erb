@@ -1,0 +1,11 @@
+<h3><%= best_in_place @project, :name, ok_button: 'Save', cancel_button: 'Cancel' %></h3>
+<% if @project.description.empty? %>
+    <%= link_to edit_project_path(@project) do %>
+        <i class="fa fa-plus"></i>
+        Add Description
+    <% end %>
+<% end %>
+<p><%= best_in_place @project, :description, as: :textarea, ok_button: 'Save', cancel_button: 'Cancel' %></p>
+<%= link_to 'Edit Project', edit_project_path(@project) %> |
+<%= link_to 'Delete Project', @project, method: :delete, data: { confirm: "Are you sure?" } %>
+            

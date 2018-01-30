@@ -52,3 +52,37 @@
         }
     }
 }
+
+// Stlye for jQuery and Best-In_Place purr notifications
+.purr
+{
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 250px;
+    padding: 20px;
+    background-color: $red;
+    border: 2px solid darken($red, 25%);
+    text-align: center;
+    font-weight: bold;
+    &:first-letter { text-transform: uppercase; }
+}
+
+// For small screen sizes (according to Bootstrap grid screen size measurements)
+@media (max-width: 768px)
+{
+    .purr 
+    {
+      position: fixed;
+      top: 2.5%;
+      right: 0;
+      left: 0;
+      width: 250px;
+      padding: 10px;
+      margin: 5% auto;
+      background-color: #fcc;
+      border: 2px solid #ff4d4d;
+      text-align: center;
+      font-weight: bold;
+    }
+}
