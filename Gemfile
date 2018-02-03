@@ -28,6 +28,8 @@ gem 'simple_form', '~> 3.5'
 
 gem 'best_in_place', '~> 3.1', '>= 3.1.1'
 
+gem 'rdiscount', '~> 2.2', '>= 2.2.0.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

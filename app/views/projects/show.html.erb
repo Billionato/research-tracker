@@ -8,4 +8,3 @@
 <p><%= best_in_place @project, :description, as: :textarea, ok_button: 'Save', cancel_button: 'Cancel' %></p>
 <%= link_to 'Edit Project', edit_project_path(@project) %> |
 <%= link_to 'Delete Project', @project, method: :delete, data: { confirm: "Are you sure?" } %>
-            
