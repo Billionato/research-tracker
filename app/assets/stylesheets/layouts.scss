@@ -123,6 +123,90 @@ body
     }
 }
 
+.jumbotron
+{
+    margin-top: -20px;
+    background-color: darken($placeholder-colour, 25%);
+    padding: 0px;
+    
+    .container
+    {
+        width: 100%;
+        background-color: $semi-transparent;
+        padding: 25px;
+    }
+    
+    .internal-nav
+    {
+        color: lighten($grey, 40%);
+        
+        &:hover
+        {
+            color: lighten($grey, 25%);
+        }
+    }
+    
+    .jumbotron-links
+    {
+        float: right;
+        text-transform: uppercase;
+        
+        .edit-link
+        {
+            padding: 5px;
+            border: 2px solid darken($green, 10%);
+            border-radius: 100px;
+            font-weight: bold;
+            color: $white;
+            background-color: $green;
+            margin-left: 5px;
+            
+            &:hover
+            {
+                text-decoration: none;
+                background-color: darken($green, 10%);
+            }
+        }
+        
+        .delete-link
+        {
+            padding: 5px;
+            width: 250px;
+            border: 2px solid darken($red, 50%);
+            border-radius: 100px;
+            font-weight: bold;
+            color: $white;
+            background-color: darken($red, 35%);
+            margin-left: 5px;
+            
+            &:hover
+            {
+                text-decoration: none;
+                background-color: darken($red, 50%);
+            }
+        }
+    }
+    
+    h2
+    {
+        color: $white;
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .well
+    {
+        margin-top: 25px;
+        background-color: lighten($grey, 40%);
+        
+        p
+        {
+            font-size: 16px;
+            line-height: 30px;
+        }
+    }
+}
+
 /* Font Awesome Icon class modifications */
 .fa-plus, .fa-arrow-left
 {

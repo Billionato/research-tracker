@@ -1,10 +1,26 @@
-<h3><%= best_in_place @project, :name, ok_button: 'Save', cancel_button: 'Cancel' %></h3>
-<% if @project.description.empty? %>
-    <%= link_to edit_project_path(@project) do %>
-        <i class="fa fa-plus"></i>
-        Add Description
-    <% end %>
-<% end %>
-<p><%= best_in_place @project, :description, as: :textarea, ok_button: 'Save', cancel_button: 'Cancel' %></p>
-<%= link_to 'Edit Project', edit_project_path(@project) %> |
-<%= link_to 'Delete Project', @project, method: :delete, data: { confirm: "Are you sure?" } %>
+<div class="jumbotron">
+    <div class="container">
+        <%= link_to root_path, class: "internal-nav" do %>
+            <i class="fa fa-arrow-left"></i>
+            Back
+        <% end %>
+        
+        <div class="jumbotron-links">
+            <%= link_to 'Edit Project', edit_project_path(@project), class: 'edit-link' %>
+            <%= link_to 'Delete Project', @project, method: :delete, data: { confirm: "Are you sure?" }, class: 'delete-link' %>
+        </div>
+        
+        <h2><%= best_in_place @project, :name, ok_button: 'Save', cancel_button: 'Cancel' %></h2>
+        
+        <div class="well">
+            <% if @project.description.empty? %>
+                <%= link_to edit_project_path(@project) do %>
+                    <i class="fa fa-plus"></i>
+                    Add Description
+                <% end %>
+            <% end %>
+            <p><%= best_in_place @project, :description, as: :textarea, ok_button: 'Save', cancel_button: 'Cancel' %></p>
+        </div>
+    
+    </div>
+</div>
