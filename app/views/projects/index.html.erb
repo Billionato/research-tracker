@@ -1,29 +1,31 @@
-<% if @projects.empty? %> 
-    <div class="empty-state-container">
-        <div class="alert alert-info">
-            <p>No projects created yet</p>
-            <%= link_to new_project_path, class: "btn btn-success" do %>
-                <i class="fa fa-plus"></i>
-                Create Project
-            <% end %>
+<div class="container">
+    <% if @projects.empty? %> 
+        <div class="empty-state-container">
+            <div class="alert alert-info">
+                <p>No projects created yet</p>
+                <%= link_to new_project_path, class: "btn btn-success" do %>
+                    <i class="fa fa-plus"></i>
+                    Create Project
+                <% end %>
+            </div>
         </div>
-    </div>
-<% end %>
-
-<div class="project-container">
-    <% @projects.each do |project| %>
-        <%= link_to project do %>
-            <div class="col-md-4">
-                <div class="media">
-                    <div class="media-body">
-                        <h2 class="media-heading"><%= truncate project.name, length: 29 %></h2>
-                        <% if project.description.empty? %>
-                            <p><i>No Project description yet...</i></p>
-                        <% end %>
-                        <p><%= truncate project.description, length: 140 %></p>
+    <% end %>
+    
+    <div class="project-container">
+        <% @projects.each do |project| %>
+            <%= link_to project do %>
+                <div class="col-md-4">
+                    <div class="media">
+                        <div class="media-body">
+                            <h2 class="media-heading"><%= truncate project.name, length: 29 %></h2>
+                            <% if project.description.empty? %>
+                                <p><i>No Project description yet...</i></p>
+                            <% end %>
+                            <p><%= truncate project.description, length: 140 %></p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <% end %>
         <% end %>
-    <% end %>
+    </div>
 </div>
