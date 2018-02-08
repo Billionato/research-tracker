@@ -1,0 +1,22 @@
+<div class="container">
+    <% if @topics.empty? %>
+        <div class="empty-state-container">
+            <div class="alert alert-info">
+                <p>No Topics created yet</p>
+                <%= link_to new_topic_path, class: "btn btn-success" do %>
+                    <i class="fa fa-plus"></i>
+                    Create Topic
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+    
+    <div class="topic-container">
+        <% @topics.each do |topic| %>
+            <%= link_to topic do %>
+                <h2><%= topic.name %></h2>
+                <p><%= topic.description %></p>
+            <% end %>
+        <% end %>
+    </div>
+</div>
