@@ -17,11 +17,6 @@ body
 
 .main-header
 {
-    .container-fluid
-    {
-        padding: 0 25px;
-    }
-    
     #logo
     {
         text-transform: uppercase;
@@ -50,7 +45,12 @@ body
         float: right;
         padding: 0 5px;
     }
-        
+    
+    .navbar-right
+    {
+        float: right;    
+    }
+    
     .navbar-nav
     {
         li

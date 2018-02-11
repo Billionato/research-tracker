@@ -23,7 +23,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+# gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'bootstrap', '~> 4.0.0'
 gem 'simple_form', '~> 3.5'
 
 gem 'best_in_place', '~> 3.1', '>= 3.1.1'
