@@ -14,8 +14,25 @@
     <div class="topic-container">
         <% @topics.each do |topic| %>
             <%= link_to topic do %>
-                <h2><%= topic.name %></h2>
-                <p><%= topic.description %></p>
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3><%= topic.name %></h3>
+                            <% if topic.description.empty? %>
+                                <p class="empty-description"><i>No description yet...</i></p>
+                            <% end %>
+                            <p><%= truncate topic.description, length: 140 %></p>
+                            <p class="thumb-button-list">
+                                <%= link_to 'View', topic_path(topic), class: "btn btn-info" %>
+                                <%= link_to 'Edit', edit_topic_path(topic), class: "btn btn-success" %>
+                                <%= link_to topic, method: :delete, data: { confirm: "Delete topic '#{topic.name}'?" }, class: "btn btn-danger" do %>
+                                    <i class="fa fa-trash"></i>
+                                <% end %>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
             <% end %>
         <% end %>
     </div>

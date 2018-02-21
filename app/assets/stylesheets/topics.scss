@@ -1,3 +1,41 @@
 // Place all the styles related to the topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.topic-container
+{
+    a, .btn-default
+    {
+        text-decoration: none;
+        color: $black;
+    }
+    
+    .thumbnail
+    {
+        height: 200px;
+        padding: 0;
+        background-color: $whitesmoke;
+        
+        .empty-description
+        {
+            margin-bottom: 70px;    
+        }
+        
+        .thumb-button-list
+        {
+            margin: 10px 0 0 0;
+            
+            a
+            {
+                text-decoration: none;
+                color: $white;
+            }
+            
+            .btn-danger
+            {
+                float: right;
+            }
+        }
+    }
+    
+}
