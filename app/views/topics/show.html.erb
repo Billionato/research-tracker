@@ -1,4 +1,5 @@
 <h2><%= @topic.name %></h2>
 <p><%= markdown(@topic.description) %></p>
 <%= link_to 'Edit Topic', edit_topic_path(@topic) %> |
-<%= link_to 'Delete Topic', @topic, method: :delete, data: { confirm: "Are you sure you?" } %>
+<%= link_to 'Delete Topic', @topic, method: :delete, data: { confirm: "Are you sure you?" } %> |
+<%= link_to 'Add Subtopic', new_topic_subtopic_path(@topic) %>
