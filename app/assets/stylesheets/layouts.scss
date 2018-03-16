@@ -208,6 +208,28 @@ body
     }
 }
 
+.btn-container
+{
+    margin: 0 auto;
+    width: 250px;
+    
+    .btn
+    {
+        border-radius: 50px;
+        border: 2px solid $placeholder_colour;
+        background: darken($placeholder_colour, 10%);
+        padding: 10px 0;
+        color: $white;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        &:hover
+        {
+            background: darken($placeholder_colour, 20%);
+        }
+    }
+}
+
 /* Font Awesome Icon class modifications */
 .fa-plus, .fa-arrow-left
 {
@@ -224,5 +246,17 @@ body
     &:hover
     {
         background-color: darken($green, 10%);
+    }
+}
+
+// For medium and large screen sizes (according to Bootstrap grid screen size measurements)
+@media (min-width: 992px)
+{
+    .jumbotron
+    {
+        .container
+        {
+            width: 75%;
+        }
     }
 }

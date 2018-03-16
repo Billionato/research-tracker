@@ -39,3 +39,49 @@
     }
     
 }
+
+.subtopics-container
+{
+    .panel-heading
+    {
+        padding: 0;
+        
+        .panel-title
+        {
+            padding: 5px 0 5px 10px;
+            
+            &:hover
+            {
+                background-color: lighten($grey, 25%);
+                
+                a
+                {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    .panel-body
+    {
+        .panel-body-content
+        {
+            border-bottom: 2px solid lighten($grey, 25%);
+            padding-bottom: 5px;
+        }
+    }
+    
+    .panel-footer
+    {
+        .panel-footer-links
+        {
+            // border-bottom: 2px solid $grey;
+            // padding-bottom: 10px;
+            
+            .btn-danger
+            {
+                float: right;
+            }
+        }
+    }
+}

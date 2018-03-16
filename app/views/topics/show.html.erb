@@ -1,5 +1,85 @@
-<h2><%= @topic.name %></h2>
-<p><%= markdown(@topic.description) %></p>
-<%= link_to 'Edit Topic', edit_topic_path(@topic) %> |
-<%= link_to 'Delete Topic', @topic, method: :delete, data: { confirm: "Are you sure you?" } %> |
-<%= link_to 'Add Subtopic', new_topic_subtopic_path(@topic) %>
+<div class="jumbotron">
+    <div class="container">
+        <%= link_to topics_path, class: "internal-nav" do %>
+            <i class="fa fa-arrow-left"></i>
+            Back
+        <% end %>
+        
+        <div class="jumbotron-links">
+            <%= link_to 'Edit Topic', edit_topic_path(@topic), class: "edit-link" %>
+            <%= link_to 'Delete Topic', @topic, method: :delete, data: { confirm: "Are you sure you?" }, class: "delete-link" %>
+        </div>
+        
+        <!-- Think of adding best_in_place -->
+        <h2><%= @topic.name %></h2>
+        
+        <div class="well">
+            <% if @topic.description.empty? %>
+                <%= link_to edit_topic_path(@topic) do %>
+                    <i class="fa fa-plus"></i>
+                    Add Description
+                <% end %>
+            <% end %>
+            <!-- Think of adding best_in_place -->
+            <p><%= markdown(@topic.description) %></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <% if @subtopics.empty? %>
+        <div class="empty-state-container">
+            <div class="alert alert-info">
+                <p>You haven't created any subtopics yet</p>
+            </div>
+        </div>
+    <% end %>
+    
+    <div class="btn-container">
+        <%= link_to new_topic_subtopic_path(@topic), class: "btn btn-block" do %>
+            <i class="fa fa-plus"></i>
+            New Subtopic
+        <% end %>
+    </div>
+    
+    <% @subtopics.each_with_index do |subtopic, index| %>
+        <div class="subtopics-container">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <!-- Panel Heading -->
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <div class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index.to_s %>" aria-expanded="true" aria-controls="collapseOne">
+                                <h4><%= subtopic.name %></h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="collapse<%= index.to_s %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <!-- Panel Body -->
+                        <div class="panel-body">
+                            <div class="panel-body-content">
+                                <% if subtopic.description.empty? %>
+                                    <p><i>No subtopic description yet...</i></p>
+                                <% end %>
+                                <p><%= truncate subtopic.description, length: 140 %></p>
+                            </div>
+                        </div>
+                        <!-- Panel Footer -->
+                        <div class="panel-footer">
+                            <div class="panel-footer-links">
+                                <%= link_to 'View', subtopic_path(subtopic), class: "btn btn-info" %>
+                                <%= link_to edit_subtopic_path(subtopic), class: "btn btn-success" do %>
+                                    <i class="fa fa-pencil"></i>
+                                <% end %>
+                                <%= link_to subtopic, method: :delete, data: { confirm: "Delete subtopic '#{subtopic.name}'?" }, class: "btn btn-danger" do %>
+                                    <i class="fa fa-trash"></i>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    
+</div>

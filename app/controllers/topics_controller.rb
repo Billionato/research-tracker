@@ -7,6 +7,7 @@ class TopicsController < ApplicationController
     end
     
     def show
+        @subtopics = Subtopic.where(topic_id: @topic.id).order("created_at DESC")
     end
     
     #View for create
