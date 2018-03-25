@@ -63,6 +63,38 @@
                                 <% end %>
                                 <p><%= truncate subtopic.description, length: 140 %></p>
                             </div>
+                            <div class="item-preview-container">
+                                <% subtopic.items.order("updated_at DESC").limit(6).each do |item| %>
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="thumbnail">
+                                            <div class="header-link">
+                                                <% if !item.url.empty? %>
+                                                    <a href="<%= item.url %>" target="_blank"><i class="fa fa-external-link"></i></a>
+                                                <% end %>
+                                            </div>
+                                            <div class="caption">
+                                                <h5><%= item.name %></h5>
+                                                <% if item.description.blank? %>
+                                                    <p class="empty-description"><i>No item description yet...</i></p>
+                                                <% end %>
+                                                <p><%= truncate item.description, length: 125 %></p>
+                                                <p class="item-preview-thumb-button-list">
+                                                    <%= link_to 'View', item_path(item), class: "btn btn-info" %>
+                                                    <%= link_to 'Edit', edit_item_path(item), class: "btn btn-success" %>
+                                                    <%= link_to item, method: :delete, data: { confirm: "Delete item '#{item.name}'?" }, class: "btn btn-danger" do %>
+                                                        <i class="fa fa-trash"></i>
+                                                    <% end %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            </div>
+                            <% if !subtopic.items.empty? && subtopic.items.count > 6 %>
+                                <div class="item-redirect-container">
+                                    <%= link_to 'View All Items', subtopic_path(subtopic), class: "btn-redirect" %>
+                                </div>
+                            <% end %>
                         </div>
                         <!-- Panel Footer -->
                         <div class="panel-footer">
@@ -81,5 +113,4 @@
             </div>
         </div>
     <% end %>
-    
 </div>

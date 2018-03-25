@@ -85,3 +85,74 @@
         }
     }
 }
+
+.item-preview-container
+{
+    margin-top: 25px;
+    
+    .thumbnail
+    {
+        background: $whitesmoke;
+        
+        .header-link 
+        { 
+            float: right;
+            font-size: 18px;
+            margin: 5px 5px 0 0;
+        }
+        
+        .empty-description
+        {
+            margin-bottom: 50px;
+        }
+    }
+    
+    .caption
+    {
+        padding: 0 10px;
+        h5 
+        { 
+            // font-size: 14px; 
+            font-weight: bold; 
+        }
+    }
+    
+    .item-preview-thumb-button-list
+    {
+        .btn
+        {
+            padding: 5px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .btn-danger 
+        { 
+            float: right;
+            padding: 5px 10px;
+        }
+    }
+}
+
+.item-redirect-container
+{
+    text-align: center;
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    
+    a
+    {
+        padding: 10px 75px;
+        border-radius: 25px;
+        background: darken($whitesmoke, 10%);
+        color: $black;
+        text-decoration: none;
+        
+        &:hover
+        {
+            //text-decoration: none;
+            background: darken($whitesmoke, 20%);
+        }
+    }
+}

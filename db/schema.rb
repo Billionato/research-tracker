@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180225001117) do
+ActiveRecord::Schema.define(version: 20180318195922) do
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.text     "description"
+    t.integer  "subtopic_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "items", ["subtopic_id"], name: "index_items_on_subtopic_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"

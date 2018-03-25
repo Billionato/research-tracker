@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   end
   
   resources :subtopics, only: [:show, :edit, :update, :destroy]
+  
+  resources :subtopics, except: [:new, :show, :create, :edit, :update, :destroy] do
+    resources :items, only: [:new, :create]
+  end
+  
+  resources :items, only: [:show, :edit, :update, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
