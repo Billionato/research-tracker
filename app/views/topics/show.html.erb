@@ -79,7 +79,7 @@
                                                 <% end %>
                                                 <p><%= truncate item.description, length: 125 %></p>
                                                 <p class="item-preview-thumb-button-list">
-                                                    <%= link_to 'View', item_path(item), class: "btn btn-info" %>
+                                                    <%= link_to 'View', item_path(item), remote: true, class: "btn btn-info" %>
                                                     <%= link_to 'Edit', edit_item_path(item), class: "btn btn-success" %>
                                                     <%= link_to item, method: :delete, data: { confirm: "Delete item '#{item.name}'?" }, class: "btn btn-danger" do %>
                                                         <i class="fa fa-trash"></i>
@@ -113,4 +113,12 @@
             </div>
         </div>
     <% end %>
+</div>
+
+<!-- showItemModal skeleton -->
+<div class="modal fade" id="showItemModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
 </div>
