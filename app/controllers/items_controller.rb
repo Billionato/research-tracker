@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
     
     def update
         if @item.update_attributes(item_params)
-            redirect_to @item, notice: "Successfully updated item"
+            redirect_to @subtopic, notice: "Successfully updated item '#{@item.name}'"
         else
             render 'edit'
         end

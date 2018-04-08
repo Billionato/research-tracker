@@ -230,6 +230,34 @@ body
     }
 }
 
+.modal
+{
+    .modal-header
+    {
+        .modal-title
+        {
+            font-weight: bold;
+            
+            a
+            {
+                color: $placeholder_colour;
+                text-decoration: none;
+                &:hover { color: darken($placeholder_colour, 10%) }
+            }
+            .fa-external-link
+            {
+                font-size: 10px;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .close
+        {
+            font-size: 30px;
+        }
+    }
+}
+
 /* Font Awesome Icon class modifications */
 .fa-plus, .fa-arrow-left
 {

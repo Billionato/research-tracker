@@ -1,6 +1,22 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h3 class="modal-title"><%= @item.name %></h3>
+    <h4 class="modal-title">
+        <% if !@item.url.empty? %>
+            <a href="<%= @item.url %>" target="_blank">
+                <%= @item.name %>
+                <!--<i class="fa fa-external-link"></i>--><!-- Include this if people are confused about the Item name being a link -->
+            </a>
+        <% else %>
+            <%= @item.name %>
+        <% end %>
+    </h4>
 </div>
-<div class="modal-body"></div>
-<!--<div class="modal-footer"></div>-->
+<div class="modal-body">
+    <% if @item.description.empty? %>
+        <p class="empty-description"><i>No item description yet...</i></p>
+    <% end %>
+    <p><%= markdown(@item.description) %></p>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default btn-md" data-dismiss="modal" aria-label="Close">Close</button>
+</div>
